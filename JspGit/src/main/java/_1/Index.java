@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.xml.ws.RequestWrapper;
 
 @WebServlet("/index")
 public class Index extends HttpServlet {
@@ -19,7 +20,7 @@ public class Index extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		RequestDispatcher dispatcher = request.getRequestDispatcher("NewFile.jsp");
+		RequestWrapper dispatcher = request.getRequestDispatcher("NewFile.jsp");
 		dispatcher.forward(request, response);
 	}
 }
